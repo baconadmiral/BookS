@@ -16,6 +16,8 @@ MySql Setup:
 
 Setup MySql normally then create a database titled 'booksDb' and a table 'book_shelf' with an Id column and serial sequence and an owner varchar(100)
 
+Note: SpringBoot connects to MySql using root since my users file is corrupted somehow...should fix this in the future.
+
 Click Run!  
 
 Get/Post
