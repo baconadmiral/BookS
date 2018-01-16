@@ -8,6 +8,8 @@ Tomcat Installation:
 Extract the tomcat files to your desired location
 
 IntelliJ Project Setup:
+I had to get a free trial of IntelliJ IDEA Ultimate since the community edition does not support Java EE
+
 You will need to setup IntelliJ to interface with Tomcat using the "Edit Configurations" popup located in the upper right corner next to the Run icon. Click the "+" icon in the upper left corner then select "Tomcat Server"
 
 MySql Setup:
