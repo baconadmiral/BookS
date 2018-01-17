@@ -24,9 +24,9 @@ Setup MySql normally then create a database titled 'booksDb' and a table 'book_s
 
 Run these:
 
-create database booksDb;
-use booksDb;
-create table book_shelf(id serial not null primary key, owner varchar(100));
+1. create database booksDb;
+2. use booksDb;
+3. create table book_shelf(id serial not null primary key, owner varchar(100));
 
 Note: SpringBoot connects to MySql using root since my users file is corrupted somehow...should fix this in the future.
 
