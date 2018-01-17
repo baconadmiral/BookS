@@ -1,6 +1,12 @@
 # bookS
 This is a project to manage books for users, this inital commit is a webservice implemented using SpringBoot to make a webservice in Kotlin.  
 
+How to Check out:
+1. Download GitHub Desktop
+2. Click on "Clone or Download"
+3. Select open in GitHub desktop
+4. Select defaults
+
 # Getting Started
 To run this project download IntelliJ IDEA (non free version), Apache Tomcat 8.5, and MySql.  
 
