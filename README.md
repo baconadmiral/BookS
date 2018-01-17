@@ -4,7 +4,7 @@ This is a project to manage books for users, this inital commit is a webservice 
 How to Check out:
 1. Download GitHub Desktop
 2. Click on "Clone or Download"
-3. Select open in GitHub desktop
+3. Select open in Desktop
 4. Select defaults
 
 # Getting Started
