@@ -3,38 +3,41 @@ package booker.bookS
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.config.annotation.EnableWebMvc
-import java.time.Instant
-import javax.persistence.*
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
 
-interface BookShelfRepository: JpaRepository<BookShelf, Long>
+interface BookRepository: JpaRepository<Book, Long>
 
-@RestController @RequestMapping(value = "/bookshelf") @EnableWebMvc
-class BookResource(val bookShelfRepo: BookShelfRepository) {
+@RestController
+@RequestMapping(value = "/book") @EnableWebMvc
+class BookResource(val bookRepo: BookRepository) {
 
     @GetMapping(value = "/a")
-    fun getAll() = bookShelfRepo.findAll()
+    fun getAll() = bookRepo.findAll()
 
     @GetMapping(value = "/{id}")
-    fun getOne(@PathVariable id: Long) = bookShelfRepo.findOne(id)
+    fun getOne(@PathVariable id: Long) = bookRepo.findOne(id)
 
     @PostMapping(value ="/")
-    fun new(@RequestBody owner: String) = bookShelfRepo.save(BookShelf(owner = owner))
+    fun new(@RequestBody title: String) = bookRepo.save(Book(title = title))
 
     @DeleteMapping(value = "/{id}")
-    fun delete(@PathVariable id: Long) = bookShelfRepo.delete(id)
+    fun delete(@PathVariable id: Long) = bookRepo.delete(id)
 
 
     @PutMapping(value = "/{id}")
-    fun update(@PathVariable id: Long, @RequestBody bookShelf: BookShelf) : BookShelf{
-        val shelfToUpdate = bookShelfRepo.getOne(id)
+    fun update(@PathVariable id: Long, @RequestBody book: Book) : Book{
+        val bookToUpdate = bookRepo.getOne(id)
 
-        shelfToUpdate.owner = bookShelf.owner;
+        bookToUpdate.title = book.title;
 
-        return bookShelfRepo.save(shelfToUpdate)
+        return bookRepo.save(bookToUpdate)
 
     }
 }
 
 @Entity
-class BookShelf(@Id @GeneratedValue(strategy = GenerationType.AUTO)
-val id:Long = 0, var owner:String="")
+class Book(@Id @GeneratedValue(strategy = GenerationType.AUTO)
+            val id:Long = 0, var title:String="")
