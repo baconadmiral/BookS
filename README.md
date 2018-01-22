@@ -48,3 +48,6 @@ curl http://localhost:8080/bookshelf/a
 or 
 
 curl http://localhost:8080/bookshelf/1
+
+
+curl -X PUT -H "Accept: application/json" -H "Content-Type: application/json" -d '{"id": 1, "owner": "test_again", "books":[{"id":1 , "title":"Test Book", "bookshelf_id":1 }]}' http://localhost:8080/bookshelf/1
