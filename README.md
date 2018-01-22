@@ -18,6 +18,10 @@ I had to get a free trial of IntelliJ IDEA Ultimate since the community edition 
 
 You will need to setup IntelliJ to interface with Tomcat using the "Edit Configurations" popup located in the upper right corner next to the Run icon. Click the "+" icon in the upper left corner then select "Tomcat Server"
 
+H2 Setup:
+On Mac install H2 using "brew install h2" then run project
+Other OS's you will need to download H2 from http://www.h2database.com/html/main.html
+
 MySql Setup:
 
 Setup MySql normally then create a database titled 'booksDb' and a table 'book_shelf' with an Id column and serial sequence and an owner varchar(100)
@@ -44,3 +48,6 @@ curl http://localhost:8080/bookshelf/a
 or 
 
 curl http://localhost:8080/bookshelf/1
+
+
+curl -X PUT -H "Accept: application/json" -H "Content-Type: application/json" -d '{"id": 1, "owner": "test_again", "books":[{"id":1 , "title":"Test Book", "bookshelf_id":1 }]}' http://localhost:8080/bookshelf/1
